@@ -226,3 +226,19 @@ main {
 	border-radius: 1rem;
 	margin-bottom: 1rem;
 }
+
+footer {
+	padding: 0.65rem;
+	background-color: var(--darker);
+	color: var(--light);
+	font-size: 0.75rem;
+	font-weight: 700;
+	text-align: center;
+}
+
+.fav-credit{
+	text-align: center;
+	font-size: 0.65rem;
+	font-weight: 500;
+	color: var(--light);
+}
