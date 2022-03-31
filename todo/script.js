@@ -72,6 +72,7 @@ window.addEventListener('load', () => {
 			const timer_element = document.createElement('div');
 			timer_element.classList.add('timer');
 			//create a popup with a timer and a button to stop the timer and a button to start the timer again
+			var ding = new Audio("timer.mp3");
 			function startTimer(duration, display) {
 			    var timer = duration, minutes, seconds;
 			    setInterval(function () {
@@ -83,10 +84,11 @@ window.addEventListener('load', () => {
 
 			        display.textContent = minutes + ":" + seconds;
 			        if (--timer < 0) {
-						
 						timer_element.removeChild(timer_display);
 						timer_element.removeChild(timer_actions);
+						ding.play();
 						alert("Time's up!");
+
 			        }
 
 			    }, 1000);
