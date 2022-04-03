@@ -13,7 +13,13 @@
 	<link rel="shortcut icon" href="fav96.png" type="image/x-icon">
 </head>
 <body vlink="#EC4899">
-	
+	<button id="play-music-button" onclick="playAudio()" type="button" title="Click here to play lo-fi music">
+		<i class="fa fa-play"></i>
+	</button>
+	<audio id="music" loop>
+		<source src="music/music1.mp3" type="audio/mpeg">
+	</audio>
+
 	<header>
 		<h1>tasklike</h1>
 		<h2>organize your tasks in a minimalistic fashion</h2>
@@ -31,7 +37,7 @@
 	</header>
 	<main>
 		<section class="task-list">
-			<h2>Tasks</h2>
+			<h2>Tasks to be done</h2>
 
 			<div id="tasks">
 

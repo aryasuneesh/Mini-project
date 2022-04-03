@@ -3,6 +3,19 @@ window.addEventListener('load', () => {
 	const input = document.querySelector("#new-task-input");
 	const list_element = document.querySelector("#tasks");
 
+	var playButton = document.getElementById("play-music-button");
+	var audio = document.getElementById("music");
+
+	playButton.addEventListener("click", function() {
+		if (audio.paused) {
+			audio.play();
+			playButton.innerHTML = '<i class="fa fa-pause"></i>';
+		} else {
+			audio.pause();
+			playButton.innerHTML = '<i class="fa fa-play"></i>';
+		}
+	});
+
 	form.addEventListener('submit', (e) => {
 		e.preventDefault();
 
@@ -71,7 +84,6 @@ window.addEventListener('load', () => {
 		task_timer_element.addEventListener('click', (e) => {
 			const timer_element = document.createElement('div');
 			timer_element.classList.add('timer');
-			//create a popup with a timer and a button to stop the timer and a button to start the timer again
 			var ding = new Audio("timer.mp3");
 			function startTimer(duration, display) {
 			    var timer = duration, minutes, seconds;
@@ -93,7 +105,6 @@ window.addEventListener('load', () => {
 
 			    }, 1000);
 			}
-			//popup with a timer and a button to stop the timer and a button to start the timer again
 			const timer_display = document.createElement('div');
 			timer_display.classList.add('timer-display');
 			timer_display.innerText = '00:00';
@@ -115,7 +126,6 @@ window.addEventListener('load', () => {
 			
 			timer_element.appendChild(timer_actions);
 			list_element.appendChild(timer_element);
-			//in timer_display, allow user to type in a time in the format mm:ss using a text box alert
 			timer_start.addEventListener('click', (e) => {
 				const time = prompt("Enter a time in the format mm:ss");
 				const time_array = time.split(':');
@@ -125,9 +135,7 @@ window.addEventListener('load', () => {
 				startTimer(total_seconds, timer_display);
 				
 			});
-			//when timer runs out alert user that time is up
 			
-			//when user clicks on the stop button, the timer stops
 			timer_stop.addEventListener('click', (e) => {
 				timer_element.removeChild(timer_display);
 				timer_element.removeChild(timer_actions);
